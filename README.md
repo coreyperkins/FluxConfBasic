@@ -11,12 +11,7 @@ Install FluxCD
 
 1. Bootstrap Flux to your repo:
 
-`flux bootstrap github \
-  --owner=$GITHUB_USER \
-  --repository=FluxConfBasic \
-  --branch=main \
-  --path=./clusters/my-cluster \
-  --personal`
+`flux bootstrap github --owner=$GITHUB_USER --repository=FluxConfBasic --branch=main --path=./clusters/my-cluster --personal`
 
 Create a Kustomization + HelmRelease to install Confluence with basic resources
 - emptyDir for sharedHome and localHome volumes

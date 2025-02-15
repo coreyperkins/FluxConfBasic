@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: confluence
+  namespace: default
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: confluence
+      version: "latest"
+      sourceRef:
+        kind: HelmRepository
+        name: confluence
+  values:
+    replicaCount: 2
+    ingress:
+      enabled: true
+      hosts:
+        - host: confluence.example.com
+          paths:
+            - path: /
+              pathType: Prefix
