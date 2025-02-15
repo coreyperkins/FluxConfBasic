@@ -5,4 +5,4 @@ metadata:
   namespace: default
 spec:
   interval: 5m
-  url: https://example.com/confluence-chart
+  url: https://atlassian.github.io/data-center-helm-charts
