@@ -17,6 +17,9 @@ spec:
       kind: ConfigMap
   # these values are going to cm: confluence-helm-values
   values:
+    additionalEnvironmentVariables:
+      - name: "CoreyHelmLove"
+        value: "Corey Loves Helm"
     replicaCount: 1
     ingress:
       enabled: true
