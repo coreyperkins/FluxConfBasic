@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: confluence
   values:
-    env:
+    additionalEnvironmentVariables:
       - name: COREY_VAR
         value: "corey p"
     replicaCount: 2
