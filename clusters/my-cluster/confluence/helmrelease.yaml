@@ -12,10 +12,10 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: confluence
+  valuesFrom:
+    - name: confluence-env
+      kind: ConfigMap
   values:
-    additionalEnvironmentVariables:
-      - name: COREY_VAR
-        value: "corey p"
     replicaCount: 2
     ingress:
       enabled: true
