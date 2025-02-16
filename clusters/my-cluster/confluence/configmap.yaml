@@ -11,3 +11,4 @@ data:
       aaaaa: "huh"
       additionalJvmArgs:
         - -CDPSays=true
+        - -ignore_jvm_version=true
