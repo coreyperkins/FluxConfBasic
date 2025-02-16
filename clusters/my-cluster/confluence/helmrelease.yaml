@@ -17,9 +17,17 @@ spec:
       kind: ConfigMap
   # these values are going to cm: confluence-helm-values
   values:
-    additionalEnvironmentVariables:
-      - name: "CoreyHelmLove"
-        value: "Corey Loves Helm"
+    confluence:
+      additionalEnvironmentVariables:
+        - name: "CoreyHelmLove"
+          value: "Corey Loves Helm"
+        - name: ignore_jvm_version
+          value: "true"
+    resources:
+      jvm:
+        maxHeap: "8192m"
+        minHeap: "8192m"
+        reservedCodeCache: "1024m"
     replicaCount: 1
     ingress:
       enabled: true
