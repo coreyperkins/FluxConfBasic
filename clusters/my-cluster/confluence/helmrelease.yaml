@@ -18,9 +18,6 @@ spec:
   # these values are going to cm: confluence-helm-values
   values:
     replicaCount: 1
-    # additionalEnvironmentVariables:
-    #   - name: cdp_idk_learning_this_chart
-    #     value: "true"
     ingress:
       enabled: true
       hosts:
