@@ -21,3 +21,6 @@ spec:
           paths:
             - path: /
               pathType: Prefix
+    extraEnv:
+      - name: ignore_jvm_version
+        value: "true"
