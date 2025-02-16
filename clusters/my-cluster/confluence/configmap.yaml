@@ -7,3 +7,7 @@ data:
   values.yaml: |  # This is the key that was missing and causing the error
     ignore_jvm_version: "true"
     COREY_VAR: "fuck"
+    confluence:
+      aaaaa: "huh"
+      additionalJvmArgs:
+        - -CDPSays=true

@@ -15,8 +15,12 @@ spec:
   valuesFrom:
     - name: confluence-env
       kind: ConfigMap
+  # these values are going to cm: confluence-helm-values
   values:
-    replicaCount: 2
+    replicaCount: 1
+    # additionalEnvironmentVariables:
+    #   - name: cdp_idk_learning_this_chart
+    #     value: "true"
     ingress:
       enabled: true
       hosts:
