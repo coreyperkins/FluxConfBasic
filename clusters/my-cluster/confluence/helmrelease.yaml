@@ -23,6 +23,14 @@ spec:
           value: "Corey Loves Helm"
         - name: ignore_jvm_version
           value: "true"
+        - name: CATALINA_OPTS
+          value: "-Dfile.encoding=UTF-8 -Dconfluence.cluster.node.name=www.example.com -Datlassian.plugins.startup.options='--disable-all-addons'"
+        - name: ATL_PROXY_NAME
+          value: confluence-sbx-il2.gravity.spaceforce.mil
+        - name: ATL_PROXY_PORT
+          value: "443"
+        - name: CONFLUENCE_HOME
+          value: /var/atlassian/application-data/confluence/
     resources:
       jvm:
         maxHeap: "8192m"
