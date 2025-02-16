@@ -6,4 +6,4 @@ metadata:
 data:
   values.yaml: |  # This is the key that was missing and causing the error
     ignore_jvm_version: "true"
-    COREY_VAR: 
+    COREY_VAR: "fuck"
