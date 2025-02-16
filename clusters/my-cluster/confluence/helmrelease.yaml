@@ -36,6 +36,17 @@ spec:
         maxHeap: "8192m"
         minHeap: "8192m"
         reservedCodeCache: "1024m"
+      container:
+        requests:
+          cpu: "4"
+          memory: "32Gi"
+        limits:
+          cpu: "8"
+          memory: "32Gi"
+      additionalJvmArgs:
+        - -Dcom.redhat.fips=false
+        - -Dhazelcast.phone.home.enabled=false
+        - -Dupm.plugin.upload.enabled=true
     replicaCount: 1
     ingress:
       enabled: true
