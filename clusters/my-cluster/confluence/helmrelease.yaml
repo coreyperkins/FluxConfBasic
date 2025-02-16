@@ -13,6 +13,9 @@ spec:
         kind: HelmRepository
         name: confluence
   values:
+    env:
+      - name: COREY_VAR
+        value: "corey p"
     replicaCount: 2
     ingress:
       enabled: true
@@ -21,13 +24,3 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-    extraEnv:
-      - name: ignore_jvm_version
-        value: "true"
-    podTemplate:
-      spec:
-        containers:
-          - name: confluence
-            env:
-              - name: ignore_jvm_version
-                value: "true"
