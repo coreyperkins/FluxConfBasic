@@ -5,10 +5,9 @@ metadata:
   namespace: default
 data:
   values.yaml: |  # This is the key that was missing and causing the error
-    ignore_jvm_version: "true"
-    COREY_VAR: "fuck"
+    confluence-env-config-map-var: "confluence-env-config-map-var-value"
     confluence:
-      aaaaa: "huh"
+      confluence_env-config-map-var: "confluence_env-config-map-var-value"
       additionalJvmArgs:
-        - -CDPSays=true
+        - -ignore_jvm_version_from_additional_jvm_args=true
         - -ignore_jvm_version=true

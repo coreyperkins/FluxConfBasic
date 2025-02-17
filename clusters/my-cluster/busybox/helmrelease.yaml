@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: busybox
+      version: "1.32.0"  # Replace with the actual version number if needed
+      sourceRef:
+        kind: HelmRepository
+        name: busybox
+        namespace: flux-system
+  valuesFrom:
+    - name: busybox-env
+      kind: ConfigMap
+  values:
+    replicaCount: 2
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "200m"
+        memory: "256Mi"
+    env:
+      - name: MY_VAR
+        value: "my_value"

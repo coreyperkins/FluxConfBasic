@@ -12,6 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: confluence
+  # 
   valuesFrom:
     - name: confluence-env
       kind: ConfigMap
@@ -19,8 +20,10 @@ spec:
   values:
     confluence:
       additionalEnvironmentVariables:
-        - name: "CoreyHelmLove"
-          value: "Corey Loves Helm"
+        - name: "Additional_Env_Var_Ex_1"
+          value: "Additional_Env_Var_Ex_1_Value"
+        - name: ignore_jvm_version_from_additional_env_variables
+          value: "true"
         - name: ignore_jvm_version
           value: "true"
         - name: CATALINA_OPTS
@@ -31,22 +34,22 @@ spec:
           value: "443"
         - name: CONFLUENCE_HOME
           value: /var/atlassian/application-data/confluence/
-    resources:
-      jvm:
-        maxHeap: "8192m"
-        minHeap: "8192m"
-        reservedCodeCache: "1024m"
-      container:
-        requests:
-          cpu: "4"
-          memory: "32Gi"
-        limits:
-          cpu: "8"
-          memory: "32Gi"
-      additionalJvmArgs:
-        - -Dcom.redhat.fips=false
-        - -Dhazelcast.phone.home.enabled=false
-        - -Dupm.plugin.upload.enabled=true
+      resources:
+        jvm:
+          maxHeap: "8192m"
+          minHeap: "8192m"
+          reservedCodeCache: "1024m"
+        container:
+          requests:
+            cpu: "2"
+            memory: "4Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+        additionalJvmArgs:
+          - -Dcom.redhat.fips=false
+          - -Dhazelcast.phone.home.enabled=false
+          - -Dupm.plugin.upload.enabled=true
     replicaCount: 1
     ingress:
       enabled: true

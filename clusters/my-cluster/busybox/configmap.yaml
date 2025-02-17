@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: busybox-env
+  namespace: default
+data:
+  values.yaml: |  # This is the key that was missing and causing the error
+    random-busybox-var: "random-busybox-var-value"
